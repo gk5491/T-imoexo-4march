@@ -223,46 +223,7 @@ const Products = () => {
         )}
       </main>
 
-      <footer className="border-t border-slate-200 bg-slate-950 px-4 py-16 text-white">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-4">
-            <div className="col-span-1 lg:col-span-2">
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500 font-bold text-slate-950">T</div>
-                <span className="font-display text-xl font-black tracking-tight">T-IMOEXO</span>
-              </div>
-              <p className="max-w-sm leading-relaxed text-slate-400">
-                A diversified international trade and manufacturing company committed to delivering superior quality across global markets.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="mb-6 text-sm font-bold uppercase tracking-widest text-white/50">Our Sectors</h4>
-              <ul className="space-y-3 text-sm font-medium text-slate-400">
-                {sectors.slice(0, 4).map((sector) => (
-                  <li key={sector}>{sector}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="mb-6 text-sm font-bold uppercase tracking-widest text-white/50">Contact</h4>
-              <ul className="space-y-3 text-sm font-medium text-slate-400">
-                <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> +91 98765 43210</li>
-                <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> info@t-imoexo.com</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center justify-between gap-4 pt-10 md:flex-row">
-            <p className="text-sm font-medium text-slate-500">(c) 2026 T-ImoExo International Pvt Ltd.</p>
-            <div className="flex gap-8 text-sm font-bold uppercase tracking-widest text-slate-500">
-              <a href="#" className="transition-colors hover:text-white">Privacy</a>
-              <a href="#" className="transition-colors hover:text-white">Terms</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+    
 
       <CartDrawer />
     </div>

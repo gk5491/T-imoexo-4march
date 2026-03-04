@@ -6,14 +6,14 @@ import vactechFogger from "@/assets/products/vactech-fogger.jpg";
 import vactechLedLight from "@/assets/products/vactech-led-ot-light.jpg";
 
 // Aastha Meditec images
-import aasthaOT from "@/assets/products/aastha-operation-theatre.jpg";
-import aasthaICU from "@/assets/products/aastha-icu-solutions.jpg";
-import aasthaIVF from "@/assets/products/aastha-ivf-lab.jpg";
-import aasthaNICU from "@/assets/products/aastha-nicu.jpg";
-import aasthaCathLab from "@/assets/products/aastha-cath-lab.jpg";
-import aasthaInterior from "@/assets/products/aastha-interior.jpg";
-import aasthaSterileDoors from "@/assets/products/aastha-sterile-doors.jpg";
-import aasthaBedHead from "@/assets/products/aastha-bed-head-panel.jpg";
+// import aasthaOT from "@/assets/products/aastha-operation-theatre.jpg";
+// import aasthaICU from "@/assets/products/aastha-icu-solutions.jpg";
+// import aasthaIVF from "@/assets/products/aastha-ivf-lab.jpg";
+// import aasthaNICU from "@/assets/products/aastha-nicu.jpg";
+// import aasthaCathLab from "@/assets/products/aastha-cath-lab.jpg";
+// import aasthaInterior from "@/assets/products/aastha-interior.jpg";
+// import aasthaSterileDoors from "@/assets/products/aastha-sterile-doors.jpg";
+// import aasthaBedHead from "@/assets/products/aastha-bed-head-panel.jpg";
 
 // G-Aim images
 import gaimInstantCoffee from "@/assets/products/gaim-instant-coffee.jpg";
@@ -26,12 +26,23 @@ import farmJowarPuff from "@/assets/products/farm-jowar-puff.jpg";
 import farmCookies from "@/assets/products/farm-millet-cookies.jpg";
 
 // Success Plus images
-import successMachine150 from "@/assets/products/success-machine-150ton.jpg";
-import successMachineHaitan from "@/assets/products/success-machine-haitan.jpg";
 import successProducts from "@/assets/products/success-plastic-products.jpg";
 
 // HOTSHOT images
 import hotshotProducts from "@/assets/products/hotshot-products.jpg";
+
+// Condom Products images
+const dots1600 = "/img/products/1600-dots.png";
+const textured3in1 = "/img/products/3in1-textured.png";
+const delay4in1 = "/img/products/4in1-delay.png";
+const bananaCondom = "/img/products/banana-condom.png";
+const champagneCondom = "/img/products/champagne-condom.png";
+const chocolateCondom = "/img/products/chocolate-condom.png";
+const redwineCondom = "/img/products/redwine-condom.png";
+const strawberryCondom = "/img/products/strawberry-condom.png";
+const superDotted = "/img/products/super-dotted.png";
+const ultraThin = "/img/products/ultra-thin.png";
+const whiskeyCondom = "/img/products/whiskey-condom.png";
 
 // Logos
 import vactechLogo from "@/assets/logos/vactech-logo.jpg";
@@ -111,75 +122,96 @@ export const companies: Company[] = [
       },
     ],
   },
-  // {
-  //   id: "aastha-meditec",
-  //   name: "Aastha Meditec",
-  //   tagline: "Complete Healthcare Infrastructure & Solutions",
-  //   started: "1988 (facility roots)",
-  //   overview:
-  //     "Aastha Meditec positions itself as a turnkey healthcare infrastructure partner for modular operating theatres and critical care spaces. On its timeline, the company traces operations back to a facility started in 1988, followed by successive manufacturing expansions. It highlights cleanroom engineering, contamination control, and end-to-end delivery aligned to modern hospital standards.",
-  //   sector: "Healthcare Infrastructure",
-  //   color: "hsl(180 55% 38%)",
-  //   logo: aasthaLogo,
-  //   products: [
-  //     {
-  //       id: "am-001",
-  //       name: "Operation Theatre",
-  //       description: "Turnkey operation theatre setup with modular OT panels, laminar airflow systems, surgical lights, and pendant systems for world-class surgical environments.",
-  //       image: aasthaOT,
-  //       category: "OT Solutions",
-  //     },
-  //     {
-  //       id: "am-002",
-  //       name: "ICU Solutions",
-  //       description: "Complete ICU setup with patient monitoring systems, ICU beds, ventilators, infusion pumps, and centralized monitoring for critical care units.",
-  //       image: aasthaICU,
-  //       category: "Critical Care",
-  //     },
-  //     {
-  //       id: "am-003",
-  //       name: "IVF Lab Setup",
-  //       description: "State-of-the-art IVF laboratory design and equipment including incubators, microscopes, laminar flow hoods, and controlled environment systems.",
-  //       image: aasthaIVF,
-  //       category: "Lab Solutions",
-  //     },
-  //     {
-  //       id: "am-004",
-  //       name: "NICU Solutions",
-  //       description: "Neonatal Intensive Care Unit setup with infant warmers, phototherapy units, neonatal ventilators, and monitoring systems for newborn care.",
-  //       image: aasthaNICU,
-  //       category: "Neonatal Care",
-  //     },
-  //     {
-  //       id: "am-005",
-  //       name: "Cath Labs Solutions",
-  //       description: "Cardiac catheterization laboratory design and equipment for interventional cardiology procedures with advanced imaging and hemodynamic monitoring.",
-  //       image: aasthaCathLab,
-  //       category: "Cardiology",
-  //     },
-  //     {
-  //       id: "am-006",
-  //       name: "Interior Architecture",
-  //       description: "Specialized hospital interior architecture and design services creating functional, hygienic, and aesthetically pleasing healthcare environments.",
-  //       image: aasthaInterior,
-  //       category: "Architecture",
-  //     },
-  //     {
-  //       id: "am-007",
-  //       name: "Sterile Doors",
-  //       description: "Hermetically sealed sterile doors for operation theatres, clean rooms, and controlled environments with automatic and manual configurations.",
-  //       image: aasthaSterileDoors,
-  //       category: "Infrastructure",
-  //     },
-  //     {
-  //       id: "am-008",
-  //       name: "Bed Head Panel",
-  //       description: "Wall-mounted bed head panel units with integrated medical gas outlets, electrical sockets, nurse call systems, and reading lights for patient rooms and ICUs.",
-  //       image: aasthaBedHead,
-  //       category: "Infrastructure",
-  //     },
-  //   ],
-  // },
+  {
+    id: "hotshot",
+    name: "HOTSHOT",
+    tagline: "Premium Intimate Wellness Products",
+    started: "2024",
+    overview:
+      "HOTSHOT brings a premium range of intimate wellness products designed for safety, comfort, and pleasure. Our collection features high-quality latex condoms in various textures and flavors, ensuring the highest standards of protection and reliability for a better experience.",
+    sector: "Wellness & Protection",
+    color: "hsl(340 80% 50%)",
+    logo: hotshotLogo,
+    products: [
+      {
+        id: "hs-001",
+        name: "1600 Dots Condoms",
+        description: "Experience enhanced stimulation with 1600 raised dots for maximum intensity and pleasure. Premium quality latex for safety and comfort.",
+        image: dots1600,
+        category: "Textured",
+      },
+      {
+        id: "hs-002",
+        name: "3-in-1 Textured",
+        description: "The ultimate combination of dots, ribs, and contoured shape for varied sensations and a superior intimate experience.",
+        image: textured3in1,
+        category: "Textured",
+      },
+      {
+        id: "hs-003",
+        name: "4-in-1 Delay",
+        description: "Specially formulated for extended performance and pleasure, featuring a combination of texture and delay technology.",
+        image: delay4in1,
+        category: "Performance",
+      },
+      {
+        id: "hs-004",
+        name: "Super Dotted",
+        description: "Strategically placed dots for targeted stimulation and enhanced pleasure without compromising on safety.",
+        image: superDotted,
+        category: "Textured",
+      },
+      {
+        id: "hs-005",
+        name: "Ultra Thin",
+        description: "Feel everything with our ultra-thin latex design. Provides a natural feel while maintaining high strength and reliability.",
+        image: ultraThin,
+        category: "Classic",
+      },
+      {
+        id: "hs-006",
+        name: "Banana Flavor",
+        description: "Sweet and tropical banana flavored condoms for a fun and aromatic intimate session. Made with safe food-grade flavors.",
+        image: bananaCondom,
+        category: "Flavored",
+      },
+      {
+        id: "hs-007",
+        name: "Chocolate Flavor",
+        description: "Indulge in the rich and smooth aroma of chocolate. Adds a delicious twist to your protection with premium flavored latex.",
+        image: chocolateCondom,
+        category: "Flavored",
+      },
+      {
+        id: "hs-008",
+        name: "Strawberry Flavor",
+        description: "A classic favorite with the sweet scent of fresh strawberries. High-quality protection with a delightful fruity aroma.",
+        image: strawberryCondom,
+        category: "Flavored",
+      },
+      {
+        id: "hs-009",
+        name: "Red Wine Flavor",
+        description: "Elegant and sophisticated red wine aroma for a unique and romantic atmosphere. Premium protection with a touch of luxury.",
+        image: redwineCondom,
+        category: "Flavored",
+      },
+      {
+        id: "hs-010",
+        name: "Whiskey Flavor",
+        description: "A bold and distinctive whiskey flavored condom for those seeking a unique and adventurous experience.",
+        image: whiskeyCondom,
+        category: "Flavored",
+      },
+      {
+        id: "hs-011",
+        name: "Champagne Flavor",
+        description: "Celebrate intimacy with the bubbly and light aroma of champagne. Premium quality for special moments.",
+        image: champagneCondom,
+        category: "Flavored",
+      },
+    ],
+  },
   {
     id: "g-aim",
     name: "Premium Coffee",
@@ -273,102 +305,4 @@ export const companies: Company[] = [
       },
     ],
   },
-  {
-    id: "hotshot",
-    name: "HOTSHOT",
-    tagline: "Sports Equipment & Accessories",
-    started: "Not publicly listed",
-    overview:
-      "HOTSHOT is presented as a cricket-focused sports equipment brand covering bats, protection gear, gloves, footwear, and accessories. The catalog is structured around match-day performance, player safety, and practical kit completeness across training and competition. Its product mix targets both amateur and professional cricket users.",
-    sector: "Sports & Fitness",
-    color: "hsl(0 80% 48%)",
-    logo: hotshotLogo,
-    products: [
-      {
-        id: "hs-001",
-        name: "English Willow Cricket Bat",
-        description: "Premium Grade 1 English Willow cricket bat, hand-crafted for optimal balance and powerful stroke play. Features a large sweet spot and professional-grade handle.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-002",
-        name: "Professional Batting Pads",
-        description: "Ultra-lightweight professional batting pads with high-density foam for maximum protection and comfort during long innings.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-003",
-        name: "Leather Cricket Ball",
-        description: "Four-piece premium alum-tanned leather cricket ball. Hand-stitched for superior shape retention and pronounced seam.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-004",
-        name: "Batting Gloves",
-        description: "Professional level batting gloves with multi-flex finger points and high-quality leather palms for excellent grip and flexibility.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-005",
-        name: "Cricket Helmet",
-        description: "Advanced safety cricket helmet with high-impact resistant shell and adjustable steel grille for maximum face protection.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-006",
-        name: "Thigh Guard Set",
-        description: "Dual-layer protection thigh guard set with ergonomic design for unrestricted movement and superior impact absorption.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-007",
-        name: "Duffle Cricket Bag",
-        description: "Spacious duffle-style cricket bag with multiple compartments for all your gear, including dedicated bat pockets and shoe compartment.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-008",
-        name: "Wicket Keeping Gloves",
-        description: "Premium leather wicket keeping gloves with large catching area and high-grip rubber palms for superior performance.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-009",
-        name: "Cricket Stumps Set",
-        description: "Full-size wooden cricket stumps set with bails, made from high-quality treated wood for durability.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-010",
-        name: "Abdominal Guard",
-        description: "High-impact resistant abdominal guard with padded edges for maximum protection and comfort.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-011",
-        name: "Cricket Shoes",
-        description: "Professional cricket shoes with metal spikes for excellent traction on turf and cushioned midsole for all-day comfort.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-      {
-        id: "hs-012",
-        name: "Arm Guard",
-        description: "Lightweight and protective arm guard with adjustable straps for a secure fit and reliable protection against fast bowling.",
-        image: hotshotProducts,
-        category: "Cricket",
-      },
-    ],
-  },
 ];
-

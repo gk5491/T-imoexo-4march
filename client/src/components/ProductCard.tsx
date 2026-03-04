@@ -42,22 +42,6 @@ const ProductCard = ({ product, companyName, companyColor, delay = 0 }: ProductC
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-900/15 to-transparent" />
 
-        <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-          <span
-            className="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] backdrop-blur-md"
-            style={{
-              backgroundColor: accentSoft,
-              border: `1px solid ${accentBorder}`,
-              color: "#f8fafc",
-            }}
-          >
-            {product.category}
-          </span>
-          <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white/90 backdrop-blur-md">
-            {companyName}
-          </span>
-        </div>
-
         {hasVariants && (
           <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-black/25 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
             <Sparkles className="h-3.5 w-3.5" />
@@ -67,6 +51,18 @@ const ProductCard = ({ product, companyName, companyColor, delay = 0 }: ProductC
       </div>
 
       <div className="relative flex flex-1 flex-col p-5 sm:p-6">
+        <div className="mb-3 flex items-center">
+          <span
+            className="rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em]"
+            style={{
+              backgroundColor: accentSoft,
+              border: `1px solid ${accentBorder}`,
+              color: companyColor,
+            }}
+          >
+            {product.category}
+          </span>
+        </div>
         <h3 className="font-display text-lg font-black leading-tight text-slate-900">
           {product.name}
         </h3>
