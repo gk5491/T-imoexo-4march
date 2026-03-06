@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import type { Company } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
-import { ArrowUpRight, Building2, CalendarDays, Factory, Package } from "lucide-react";
+import { ArrowUpRight, Building2, CalendarDays, Factory, Package, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface CompanySectionProps {
@@ -15,10 +16,35 @@ const withAlpha = (color: string, alpha: number) => {
   return color;
 };
 
+interface ImagePreviewState {
+  src: string;
+  alt: string;
+}
+
 const CompanySection = ({ company, index }: CompanySectionProps) => {
   const productsCount = company.products.length;
   const accentSoft = withAlpha(company.color, 0.14);
   const accentRing = withAlpha(company.color, 0.42);
+  const [imagePreview, setImagePreview] = useState<ImagePreviewState | null>(null);
+
+  useEffect(() => {
+    if (!imagePreview) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setImagePreview(null);
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [imagePreview]);
 
   return (
     <section className="relative">
@@ -83,10 +109,10 @@ const CompanySection = ({ company, index }: CompanySectionProps) => {
             </div>
 
             <Link
-              to={`/contact?company=${encodeURIComponent(company.name)}`}
+              to={`/contact`}
               className="mt-6 inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-slate-800"
             >
-              Connect With {company.name}
+              Connect With Us
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </aside>
@@ -110,12 +136,38 @@ const CompanySection = ({ company, index }: CompanySectionProps) => {
                   companyName={company.name}
                   companyColor={company.color}
                   delay={i * 0.04}
+                  onImageClick={(src, alt) => setImagePreview({ src, alt })}
                 />
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      {imagePreview && (
+        <div
+          className="fixed inset-0 z-[120] flex items-center justify-center bg-slate-950/85 p-4 sm:p-8"
+          onClick={() => setImagePreview(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={imagePreview.alt}
+        >
+          <button
+            type="button"
+            onClick={() => setImagePreview(null)}
+            className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
+            aria-label="Close image preview"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <img
+            src={imagePreview.src}
+            alt={imagePreview.alt}
+            className="max-h-[88vh] max-w-[95vw] rounded-2xl object-contain shadow-[0_24px_80px_-20px_rgba(0,0,0,0.8)]"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 };

@@ -7,6 +7,7 @@ interface ProductCardProps {
   companyName: string;
   companyColor: string;
   delay?: number;
+  onImageClick?: (imageSrc: string, imageAlt: string) => void;
 }
 
 const withAlpha = (color: string, alpha: number) => {
@@ -16,7 +17,7 @@ const withAlpha = (color: string, alpha: number) => {
   return color;
 };
 
-const ProductCard = ({ product, companyName, companyColor, delay = 0 }: ProductCardProps) => {
+const ProductCard = ({ product, companyName, companyColor, delay = 0, onImageClick }: ProductCardProps) => {
   const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
   const accentSoft = withAlpha(companyColor, 0.12);
   const accentBorder = withAlpha(companyColor, 0.35);
@@ -34,16 +35,23 @@ const ProductCard = ({ product, companyName, companyColor, delay = 0 }: ProductC
       />
 
       <div className="relative aspect-[16/11] overflow-hidden bg-slate-200">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-900/15 to-transparent" />
+        <button
+          type="button"
+          onClick={() => onImageClick?.(product.image, product.name)}
+          className={`h-full w-full text-left ${onImageClick ? "cursor-zoom-in" : "cursor-default"}`}
+          aria-label={`Preview ${product.name} image from ${companyName}`}
+        >
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+        </button>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-900/15 to-transparent" />
 
         {hasVariants && (
-          <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-black/25 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
+          <div className="pointer-events-none absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-black/25 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
             <Sparkles className="h-3.5 w-3.5" />
             {product.variants!.length} variants
           </div>

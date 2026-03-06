@@ -58,7 +58,7 @@ const Products = () => {
     <div className="min-h-screen bg-[linear-gradient(180deg,#f8fafc_0%,#edf2f7_38%,#f8fafc_100%)]">
       <header className="relative overflow-hidden border-b border-slate-200/70 bg-[linear-gradient(152deg,#0B1222_0%,#12274A_42%,#1E3A63_100%)] px-4 pb-14 pt-20">
         <div className="absolute inset-0">
-          <div className="absolute -left-20 -top-28 h-72 w-72 rounded-full bg-cyan-500/20 blur-[120px]" />
+          <div className="absolute -left-20 -top-38 h-72 w-72 rounded-full bg-cyan-500/20 blur-[120px]" />
           <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-amber-500/20 blur-[120px]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.11),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.08),transparent_34%)]" />
         </div>
@@ -66,15 +66,15 @@ const Products = () => {
         <div className="container relative mx-auto max-w-7xl">
           <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-xl">
+              {/* <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-xl">
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-500 shadow-[0_0_18px_rgba(6,182,212,0.65)]">
                   <Package className="h-3.5 w-3.5 text-white" />
                 </div>
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/80">
                   T-ImoExo International
                 </span>
-              </div>
-
+              </div> */}
+              <br />
               <h1 className="mt-8 font-display text-5xl font-black leading-[0.9] tracking-tight text-white sm:text-6xl lg:text-8xl">
                 Curated
                 <span className="block bg-gradient-to-r from-cyan-300 via-sky-200 to-amber-300 bg-clip-text text-transparent">
@@ -102,7 +102,8 @@ const Products = () => {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/20 bg-white/10 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+                
+            <div className="rounded-[2rem] mt-12 border border-white/20 bg-white/10 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">Catalog Radar</p>
 
               <div className="mt-5 grid grid-cols-2 gap-3">
@@ -141,7 +142,7 @@ const Products = () => {
                 />
               </div>
 
-              <div className="flex items-center rounded-2xl border border-white/20 bg-slate-950/25 px-4">
+              <div className="flex items-center p-2 rounded-2xl border border-white/20 bg-slate-950/25 px-4">
                 <p className="text-sm font-bold tracking-wide text-slate-200">
                   {visibleProducts} / {totalProducts} products
                 </p>
